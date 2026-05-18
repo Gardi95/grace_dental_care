@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Grace Dental Care | Admin Portal Login" data-ar="مركز جريس لطب الأسنان | تسجيل دخول الإدارة"
+    data-ku="سەنتەری ددانی جریس | چوونەژوورەوەی بەڕێوەبەر">Grace Dental Care | Admin Portal Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-white);">
+
+  <!-- Page Loader Overlay -->
+  <div id="loader-wrapper">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Grace Dental Care</div>
+  </div>
+
+  <!-- Sticky Main Navigation -->
+  <nav class="navbar" style="position: static; margin-bottom: 40px;">
+    <div class="container nav-content">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.5 2 6 4.5 6 8c0 3.5 2.5 5.5 4 7 1.5 1.5 2 3 2 5 0-2 .5-3.5 2-5 1.5-1.5 4-3 4-7 0-3.5-2.5-6-6-6zm-1.5 8c-.8 0-1.5-.7-1.5-1.5S9.7 7 10.5 7s1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm3 3c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
+        </svg>
+        <span>Grace Dental</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-ar="الرئيسية" data-ku="سەرەکی">Home</a></li>
+        <li><a href="about.html" data-en="About Us" data-ar="من نحن" data-ku="دەربارەی ئێمە">About Us</a></li>
+        <li><a href="doctors.html" data-en="Doctors" data-ar="الأطباء" data-ku="پزیشکەکان">Doctors</a></li>
+        <li><a href="services.html" data-en="Services" data-ar="الخدمات" data-ku="خزمەتگوزارییەکان">Services</a></li>
+        <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا" data-ku="پەيوەندى">Contact</a></li>
+        <li><a href="admin-login.html" class="active" data-en="Admin" data-ar="الإدارة" data-ku="بەڕێوەبەر">Admin</a></li>
+      </ul>
+      
+      <div class="nav-controls">
+        <button id="themeToggle" class="theme-toggle-btn" title="Toggle Theme"></button>
+        <select id="langSwitch" class="lang-switch">
+          <option value="en">English</option>
+          <option value="ar">العربية</option>
+          <option value="ku">کوردی</option>
+        </select>
+        <button class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Card Block -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px;">
+    <div class="card" style="width: 100%; max-width: 450px; padding: 40px; box-shadow: var(--shadow-lg);">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <h1 data-en="Admin Portal Login" data-ar="تسجيل دخول الإدارة" data-ku="چوونەژوورەوەی بەڕێوەبەر"
+          style="font-family: var(--font-headings); font-size: 1.8rem; color: var(--text-main); margin-bottom: 8px;">Admin Portal Login</h1>
+        <p data-en="Access real-time clinical appointments database." data-ar="الوصول إلى قاعدة بيانات المواعيد السريرية الفورية."
+          data-ku="چوونەژوورەوە بۆ بینینی خشتەی ژوانەکانی کلینیک." style="color: var(--text-muted); font-size: 0.95rem;">
+          Access real-time clinical appointments database.
+        </p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="adminUser" data-en="Username" data-ar="اسم المستخدم" data-ku="ناوی بەکارهێنەر">Username</label>
+          <input type="text" id="adminUser" class="form-input" required placeholder="admin"
+            data-en-placeholder="Username (e.g. admin)" data-ar-placeholder="اسم المستخدم (مثال: admin)" data-ku-placeholder="ناوی بەکارهێنەر">
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label class="form-label" for="adminPass" data-en="Password" data-ar="كلمة المرور" data-ku="وشەی نهێنی">Password</label>
+          <input type="password" id="adminPass" class="form-input" required placeholder="******"
+            data-en-placeholder="Password (e.g. password123)" data-ar-placeholder="كلمة المرور (مثال: password123)" data-ku-placeholder="وشەی نهێنی">
+        </div>
+
+        <div id="loginMessage" style="color: var(--danger); font-size: 0.9rem; margin-bottom: 16px; font-weight: 500;"></div>
+
+        <button type="submit" class="btn btn-wide" data-en="Authorize Sign In" data-ar="تسجيل الدخول" data-ku="چوونەژوورەوە">Authorize Sign In</button>
+      </form>
+
+      <div style="margin-top: 32px; padding: 16px; background: var(--bg-main); border-radius: 12px; border: 1px solid var(--border-color); text-align: center;">
+        <span style="font-size: 0.85rem; color: var(--text-muted);" 
+          data-en="🔐 Clinic Demo Credentials:<br><strong>admin / password123</strong>"
+          data-ar="🔐 بيانات الدخول التجريبية:<br><strong>admin / password123</strong>"
+          data-ku="🔐 زانیاری چوونەژوورەوەی تاقیکاری:<br><strong>admin / password123</strong>">
+          🔐 Clinic Demo Credentials:<br><strong>admin / password123</strong>
+        </span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Small Footer -->
+  <footer style="padding: 24px 0; text-align: center; border-top: 1px solid var(--border-color); margin-top: 40px;">
+    <p style="font-size: 0.85rem; color: var(--text-muted);"
+       data-en="&copy; 2026 Grace Dental Care. Secure Portal System."
+       data-ar="&copy; 2026 مركز جريس لطب الأسنان. نظام البوابة الآمنة."
+       data-ku="&copy; ٢٠٢٦ سەنتەری ددانی جريس. سیستەمی پارێزراو.">
+      &copy; 2026 Grace Dental Care. Secure Portal System.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

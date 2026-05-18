@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Grace Dental Care | Live Admin Portal" data-ar="مركز جريس لطب الأسنان | لوحة الإدارة الحية"
+    data-ku="سەنتەری ددانی جریس | لیژنەی چاودێری">Grace Dental Care | Live Admin Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-portal-body" style="background: var(--bg-main);">
+
+  <!-- Page Loader Overlay -->
+  <div id="loader-wrapper">
+    <div class="loader-spinner"></div>
+    <div class="loader-logo">Grace Dental Care</div>
+  </div>
+
+  <div class="admin-layout">
+    <!-- Admin Sidebar Panel -->
+    <aside class="sidebar">
+      <div style="padding: 30px;">
+        <a href="index.html" class="logo" style="color: var(--white);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.5 2 6 4.5 6 8c0 3.5 2.5 5.5 4 7 1.5 1.5 2 3 2 5 0-2 .5-3.5 2-5 1.5-1.5 4-3 4-7 0-3.5-2.5-6-6-6zm-1.5 8c-.8 0-1.5-.7-1.5-1.5S9.7 7 10.5 7s1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm3 3c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"/>
+          </svg>
+          <span>Grace Dental</span>
+        </a>
+      </div>
+      
+      <ul class="sidebar-nav">
+        <li><a href="#" class="active" data-en="Dashboard" data-ar="لوحة القيادة" data-ku="لیژنەی بەڕێوەبەر">Dashboard</a></li>
+        <li><a href="#" data-en="Appointments" data-ar="المواعيد السريرية" data-ku="ژوانەکان">Appointments</a></li>
+        <li><a href="#" data-en="Patients Log" data-ar="سجلات المرضى" data-ku="نەخۆشەکان">Patients Log</a></li>
+        <li><a href="#" data-en="Messages Box" data-ar="صندوق الرسائل" data-ku="نامەکان">Messages Box</a></li>
+        <li><a href="index.html" data-en="← Back to Site" data-ar="← العودة للموقع" data-ku="← گەڕانەوە بۆ سەرەکی">← Back to Site</a></li>
+      </ul>
+      
+      <div style="margin-top: auto; padding: 30px;">
+        <button id="logoutBtn" class="btn btn-secondary btn-wide" style="background: rgba(255,255,255,0.1); border-color: transparent; color: var(--white);"
+          data-en="Logout System" data-ar="تسجيل الخروج" data-ku="چوونەدەرەوە">Logout System</button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-content">
+      <!-- Admin Header -->
+      <div class="admin-header-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <h1 data-en="Clinical Database Control" data-ar="التحكم في قاعدة البيانات السريرية" data-ku="کۆنترۆڵی خشتەی نۆرینگە"
+            style="font-family: var(--font-headings); font-size: 2rem; color: var(--text-main); margin-bottom: 4px;">Clinical Database Control</h1>
+          <p data-en="Manage incoming client appointment requests and read message logs."
+             data-ar="إدارة طلبات المواعيد الواردة وقراءة رسائل المرضى."
+             data-ku="بەڕێوەبردنی داواکاری ژوانەکانی نەخۆش و بینینی نامەکان." style="color: var(--text-muted); font-size: 0.95rem;">
+            Manage incoming client appointment requests and read message logs.
+          </p>
+        </div>
+        
+        <div style="display: flex; gap: 16px; align-items: center;">
+          <button id="themeToggle" class="theme-toggle-btn" style="background: var(--bg-white); border: 1px solid var(--border-color);" title="Toggle Theme"></button>
+          <select id="langSwitch" class="lang-switch" style="background: var(--bg-white); border: 1px solid var(--border-color);">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="ku">کوردی</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Quick Statistics Grid -->
+      <div class="stat-grid" style="margin-bottom: 40px;">
+        <div class="stat-card">
+          <div class="stat-title" data-en="Total Patients" data-ar="إجمالي المرضى" data-ku="کۆی نەخۆشەکان">Total Patients</div>
+          <div class="stat-value" id="statPatients">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title" data-en="Appointments / Pending" data-ar="المواعيد النشطة / الانتظار" data-ku="ژوانەکانی ئەمڕۆ">Appointments / Pending</div>
+          <div class="stat-value" id="statAppToday">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title" data-en="New Support Messages" data-ar="الرسائل الجديدة الواردة" data-ku="نامەی نوێ">New Support Messages</div>
+          <div class="stat-value" id="statNewMessages">--</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-title" data-en="Estimated Revenue" data-ar="الإيرادات التقديرية" data-ku="داهاتی خەمڵێنراو">Estimated Revenue</div>
+          <div class="stat-value">$46,500</div>
+        </div>
+      </div>
+
+      <!-- Main Database and Message Layout -->
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start;">
+        <!-- Left panel: Appointments Table -->
+        <div class="card" style="padding: 30px; box-shadow: var(--shadow-sm); overflow-x: auto;">
+          <h2 style="font-family: var(--font-headings); font-size: 1.4rem; color: var(--text-main); margin-bottom: 24px;"
+            data-en="Incoming Appointment Requests" data-ar="طلبات الحجز الواردة" data-ku="داواکاری ژوانە نوێیەکان">Incoming Appointment Requests</h2>
+          
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th data-en="Patient / Contact" data-ar="المريض / الهاتف" data-ku="نەخۆش">Patient / Contact</th>
+                <th data-en="Date & Time" data-ar="التاريخ والوقت" data-ku="بەروار و کات">Date & Time</th>
+                <th data-en="Assigned Doctor" data-ar="الطبيب" data-ku="پزیشک">Assigned Doctor</th>
+                <th data-en="Requested Treatment" data-ar="العلاج المطلوب" data-ku="خزمەتگوزاری">Requested Treatment</th>
+                <th data-en="Status" data-ar="الحالة" data-ku="دۆخی ژوان">Status</th>
+                <th data-en="Actions" data-ar="الإجراءات" data-ku="کردارەکان">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminAppTableBody">
+              <!-- Dynamically Populated by script.js -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Right panel: Patient Messages Log -->
+        <div class="card" style="padding: 30px; box-shadow: var(--shadow-sm);">
+          <h2 style="font-family: var(--font-headings); font-size: 1.4rem; color: var(--text-main); margin-bottom: 24px;"
+            data-en="Patient Contact Messages" data-ar="رسائل تواصل المرضى" data-ku="نامەی پەیوەندی نەخۆشەکان">Patient Contact Messages</h2>
+          
+          <div id="adminMessageLog" style="max-height: 480px; overflow-y: auto; display: flex; flex-direction: column;">
+            <!-- Dynamically Populated by script.js -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
